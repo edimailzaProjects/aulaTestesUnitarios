@@ -7,6 +7,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 		<sonar.projectKey>edimailzaProjects_aulaTestesUnitarios</sonar.projectKey>
 		<sonar.organization>edimailzaprojects</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
