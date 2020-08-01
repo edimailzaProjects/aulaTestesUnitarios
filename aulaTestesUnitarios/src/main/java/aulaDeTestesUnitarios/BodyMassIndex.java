@@ -1,21 +1,30 @@
 package aulaDeTestesUnitarios;
 
 public class BodyMassIndex {
+	
+	public double calculate(double weight, double height){
+        return weight / Math.pow(height, 2);
+    }
 
-	public static String calculate(Float number) {
-		if (number < 16) {
-			return "Severely Underweight: " + number.toString();
-		}
-		if (number >= 16.0 && number < 18.5) {
-			return "Underweight: " + number.toString();
-		}
-		if (number >= 18.5 && number < 24.9) {
-			return "HealthWeight: " + number.toString();
-		}
-		if (number >= 25.0 && number < 29.9) {
-			return "OverWeight: " + number.toString();
-		} else
-			return "Obese: " + number.toString();
-	}
 
+    public String classify(double bmi) {
+        String category = "Severely Underweight";
+
+        if (bmi >= 30) {
+            category = "Obese";
+        } else if (bmi >= 25) {
+            category = "Overweight";
+        } else if (bmi >= 18.5) {
+            category = "Healthy Weight";
+        } else if (bmi >= 16) {
+            category = "Underweight";
+        }
+
+        return category;
+    }
+
+	   public String classify(double weight, double height) {
+	        double bmi = calculate(weight, height);
+	        return classify(bmi);
+	   }
 }
