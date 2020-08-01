@@ -50,11 +50,75 @@ public class BodyMassIndexTest {
     	Assertions.assertEquals(actual, 2.0);
     }
     
+    //como eu fiz
     @Test
-    public void classify_calculate_ok() {
+    public void classify_calculate_ok_me() {
     	FakeBodyIndex fbi = new FakeBodyIndex();
     	String actual = fbi.classify(2.0, 1.0);
     	Assertions.assertEquals(actual, "");
+    }
+    
+    //como o prof fez
+    @Test
+    public void classify_calculate_ok_prof() {
+    	body = new BodyMassIndex() {
+    		
+    		@Override
+    		public double calculate(double weight, double height) {
+    			return -1;
+    		}
+    		
+    		@Override
+    		public String classify(double bmi) {
+    			return "none";
+    		}
+    	};
+    	Assertions.assertEquals("none", body.classify(-2,-3));
+    }
+    
+    
+    @Test
+    public void classify_spyMethodParam_prof() {
+    	final double[] actualWheight = new double[1] ;
+    	final double[] actualHeight= new double[1];
     	
+    	body = new BodyMassIndex() {
+    		@Override
+    		public double calculate(double weight, double height) {
+    			actualWheight[0] = weight;
+    			actualHeight[0]= height;
+    			return 20;
+    		}
+    		
+    		@Override
+    		public String classify(double bmi) {
+    			return super.classify(bmi);
+    		}
+    	};
+    	
+    	body.classify(10,20);
+    	Assertions.assertEquals(10, actualWheight[0]);
+    	Assertions.assertEquals(20, actualHeight[0]);
+    }
+    
+    @Test
+    public void classify_spyClassifyMethodParams_prof() {
+    	final double[] bmiValue = new double[1];
+    	
+    	body = new BodyMassIndex() {
+    		@Override
+    		public double calculate(double weight, double height) {
+    			return 50;
+    		}
+    		
+    		@Override
+    		public String classify(double bmi) {
+    			bmiValue[0] = bmi;
+    			return "new";
+    		}
+    	};
+    	
+    	body.classify(10,2);
+    	Assertions.assertEquals(50, bmiValue[0]);
     }
 }
