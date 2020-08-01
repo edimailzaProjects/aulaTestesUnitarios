@@ -54,5 +54,6 @@ public class BodyMassIndexTest {
     	FakeBodyIndex fbi = new FakeBodyIndex();
     	String actual = fbi.classify(2.0, 1.0);
     	Assertions.assertEquals(actual, "");
+    	
     }
 }
