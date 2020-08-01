@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import aulaDeTestesUnitarios.BodyMassIndex;
+import aulaTestesUnitarios.utils.FakeBodyIndex;
 
 public class BodyMassIndexTest {
 	

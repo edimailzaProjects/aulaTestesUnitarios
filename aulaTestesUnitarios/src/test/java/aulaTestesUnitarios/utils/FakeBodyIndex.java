@@ -1,4 +1,4 @@
-package aulaTestesUnitarios;
+package aulaTestesUnitarios.utils;
 
 import aulaDeTestesUnitarios.BodyMassIndex;
 

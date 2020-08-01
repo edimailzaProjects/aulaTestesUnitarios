@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import aulaDeTestesUnitarios.Message;
 import aulaDeTestesUnitarios.MessageService;
 import aulaDeTestesUnitarios.MyApplication;
+import aulaTestesUnitarios.utils.FakeMessageService;
 import aulaTestesUnitarios.utils.MessageServiceMock;
 import aulaTestesUnitarios.utils.SpyMessageService;
 

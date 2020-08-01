@@ -1,7 +1,5 @@
 package aulaTestesUnitarios.utils;
 
-import aulaTestesUnitarios.FakeMessageService;
-
 public class SpyMessageService extends FakeMessageService {
 
     public int contCalls = 0;
