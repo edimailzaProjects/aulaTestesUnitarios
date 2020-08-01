@@ -14,5 +14,9 @@ public class MyApplication {
         String newMsg = PREFIX + msg.getMsg();
         return service.send(newMsg, msg.getRec());
     }
+    
+    public boolean processMessage2(Message msg){
+        return service.send(msg.getMsg(), msg.getRec());
+    }
 }
 
