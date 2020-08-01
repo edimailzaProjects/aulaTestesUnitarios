@@ -5,8 +5,9 @@ import aulaDeTestesUnitarios.MessageService;
 public class FakeMessageService extends MessageService{
 	
 	@Override
-	public boolean send(String msg, String res) {
+	public boolean send(String msg, String rec) {
 		return true;	
 	}
 
 }
+
